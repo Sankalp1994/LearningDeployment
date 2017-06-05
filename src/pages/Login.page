@@ -1,0 +1,98 @@
+<apex:page showHeader="false" standardStylesheets="false" controller="LoginController" id="LoginPage">
+<apex:form id="LoginForm">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Dashboard</title>
+       
+        <!-- CSS Reset -->
+        <link href="{!URLFOR($Resource.Dashboard, 'css-admin/reset.css')}" rel="stylesheet"/>
+        <!--link rel="stylesheet" type="text/css" href="reset.css" tppabs="http://www.xooom.pl/work/magicadmin/css/reset.css" media="screen" /-->
+       
+        <!-- Fluid 960 Grid System - CSS framework -->
+        <link href="{!URLFOR($Resource.Dashboard, 'css-admin/grid.css')}" rel="stylesheet"/>
+        <!--link rel="stylesheet" type="text/css" href="grid.css" tppabs="http://www.xooom.pl/work/magicadmin/css/grid.css" media="screen" /-->
+        
+        <!-- IE Hacks for the Fluid 960 Grid System -->
+        <!--[if IE 6]><link rel="stylesheet" type="text/css" href="ie6.css" tppabs="http://www.xooom.pl/work/magicadmin/css/ie6.css" media="screen" /><![endif]-->
+        <!--[if IE 7]><link rel="stylesheet" type="text/css" href="ie.css" tppabs="http://www.xooom.pl/work/magicadmin/css/ie.css" media="screen" /><![endif]-->
+        
+        <!-- Main stylesheet -->
+        <link href="{!URLFOR($Resource.Dashboard, 'css-admin/styles.css')}" rel="stylesheet"/>
+        <!--link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xooom.pl/work/magicadmin/css/styles.css" media="screen" /-->
+        
+        <!-- WYSIWYG editor stylesheet -->
+        <link href="{!URLFOR($Resource.Dashboard, 'css-admin/jquery.wysiwyg.css')}" rel="stylesheet"/>
+        <!--link rel="stylesheet" type="text/css" href="jquery.wysiwyg.css" tppabs="http://www.xooom.pl/work/magicadmin/css/jquery.wysiwyg.css" media="screen" /-->
+        
+        <!-- Table sorter stylesheet -->
+        <link href="{!URLFOR($Resource.Dashboard, 'css-admin/tablesorter.css')}" rel="stylesheet"/>
+        <!--link rel="stylesheet" type="text/css" href="tablesorter.css" tppabs="http://www.xooom.pl/work/magicadmin/css/tablesorter.css" media="screen" /-->
+        
+        <!-- Thickbox stylesheet -->
+        <link href="{!URLFOR($Resource.Dashboard, 'css-admin/thickbox.css')}" rel="stylesheet"/>
+        <!--link rel="stylesheet" type="text/css" href="thickbox.css" tppabs="http://www.xooom.pl/work/magicadmin/css/thickbox.css" media="screen" /-->
+        
+        <!-- Themes. Below are several color themes. Uncomment the line of your choice to switch to different color. All styles commented out means blue theme. -->
+        <link href="{!URLFOR($Resource.Dashboard, 'css-admin/theme-blue.css')}" rel="stylesheet"/>
+        <!--link rel="stylesheet" type="text/css" href="theme-blue.css" tppabs="http://www.xooom.pl/work/magicadmin/css/theme-blue.css" media="screen" /-->
+        <!--<link rel="stylesheet" type="text/css" href="css/theme-red.css" media="screen" />-->
+        <!--<link rel="stylesheet" type="text/css" href="css/theme-yellow.css" media="screen" />-->
+        <!--<link rel="stylesheet" type="text/css" href="css/theme-green.css" media="screen" />-->
+        <!--<link rel="stylesheet" type="text/css" href="css/theme-graphite.css" media="screen" />-->
+        
+        <!-- JQuery engine script-->
+        <apex:includeScript value="{!URLFOR($Resource.Dashboard, 'css-admin/jquery-1.3.2.min.js')}"/>
+        <!--script type="text/javascript" src="jquery-1.3.2.min.js" tppabs="http://www.xooom.pl/work/magicadmin/js/jquery-1.3.2.min.js"></script-->
+        
+        <!-- JQuery WYSIWYG plugin script -->
+        <apex:includeScript value="{!URLFOR($Resource.Dashboard, 'css-admin/jquery.wysiwyg.js')}"/>
+        <!--script type="text/javascript" src="jquery.wysiwyg.js" tppabs="http://www.xooom.pl/work/magicadmin/js/jquery.wysiwyg.js"></script-->
+        
+        <!-- JQuery tablesorter plugin script-->
+        <apex:includeScript value="{!URLFOR($Resource.Dashboard, 'css-admin/jquery.tablesorter.min.js')}"/>
+        <!--script type="text/javascript" src="jquery.tablesorter.min.js" tppabs="http://www.xooom.pl/work/magicadmin/js/jquery.tablesorter.min.js"></script-->
+        
+        <!-- JQuery pager plugin script for tablesorter tables -->
+        <apex:includeScript value="{!URLFOR($Resource.Dashboard, 'css-admin/jquery.tablesorter.pager.js')}"/>
+        <!--script type="text/javascript" src="jquery.tablesorter.pager.js" tppabs="http://www.xooom.pl/work/magicadmin/js/jquery.tablesorter.pager.js"></script-->
+        
+        <!-- JQuery password strength plugin script -->
+        <apex:includeScript value="{!URLFOR($Resource.Dashboard, 'css-admin/jquery.pstrength-min.1.2.js')}"/>
+        <!--script type="text/javascript" src="jquery.pstrength-min.1.2.js" tppabs="http://www.xooom.pl/work/magicadmin/js/jquery.pstrength-min.1.2.js"></script-->
+        
+        <!-- JQuery thickbox plugin script -->
+        <apex:includeScript value="{!URLFOR($Resource.Dashboard, 'css-admin/jquery.pstrength-min.1.2.js')}"/>
+        <!--script type="text/javascript" src="thickbox.js" tppabs="http://www.xooom.pl/work/magicadmin/js/thickbox.js"></script-->
+        
+        <!-- Initiate WYIWYG text area -->
+        
+        
+        
+        
+        
+    </head>
+    <body>
+    <div style="margin: auto; width: 30%; margin-top:200px;">
+        <!-- Categories list -->
+            <div class="grid_4" style="width:80%;">
+                
+                <div class="module">
+                     <h2><span>Login</span></h2>
+                        
+                     <div class="module-body">
+                         <div><div style="width:30%; float:left;">Email</div><div style="width:70%; float:left;"><input type="text" class="input-medium" style="width:90%;"/></div></div>
+                         <br/><br/>
+                         <div><div style="width:30%; float:left;">Password</div><div style="width:70%; float:left;"><input type="text" class="input-medium" style="width:90%;"/></div></div>
+                         <br/><br/>
+                         <div><div style="width:30%; float:left;">&nbsp;</div><div style="width:70%; float:left;"><input class="submit-green" type="submit" value="Login" />
+                        </div></div>
+                     </div>
+                </div> <!-- module -->
+                <div style="clear:both;"></div>
+            </div> <!-- End .grid_6 -->
+    </div>        
+    </body>
+</html>
+</apex:form>
+</apex:page>
